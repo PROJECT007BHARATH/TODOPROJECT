@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+{% for i in task %}
+<div class="shadow card">
+    <div class="card-body">
+        <h5 class="card.title">{{i.name}}</h5>
+        <p><b>{{i.priority}}</b></p>
+        <P><b>{{i.date}}</b></P>
+        <a class="btn btn-danger" href="{% url 'delete' task.id %}">Delete</a>
+        <a class="btn btn-success" href="{% url 'update' task.id %}">Update</a>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
+
